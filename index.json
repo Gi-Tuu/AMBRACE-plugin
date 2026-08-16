@@ -27,7 +27,7 @@
         "search_inject": true
       },
       "usage": "1. 打开本插件开关即可启用；\n2. AI 需要查资料/看网页时会自动通过本插件浏览；\n3. 浏览内容只保留 30 分钟，不会写入 AI 的长期记忆，可随时关闭。",
-      "download_url": "https://raw.githubusercontent.com/AMBRACE-plugin/AMBRACE-plugin/main/zips/browser_mcp-0.1.0.zip",
+      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/browser_mcp-0.1.0.zip",
       "size": 8456,
       "sha256": "7b5edad390c9c5962be94cd1116f5783b909913cc89bd75eaa59148c1a1ad2f8",
       "min_api_version": "1.0",
@@ -50,7 +50,7 @@
         "prefix": "【插件-天气简报】"
       },
       "usage": "打开本插件开关即可；AI 会自动感知你所在城市的天气（依赖手机感知的位置/天气数据）。",
-      "download_url": "https://raw.githubusercontent.com/AMBRACE-plugin/AMBRACE-plugin/main/zips/weather_brief-1.0.0.zip",
+      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/weather_brief-1.0.0.zip",
       "size": 1026,
       "sha256": "a18dd5681db783a09100d1d54a3f001847ebf62089934bb8723d79012b8dfd07",
       "min_api_version": "1.0",
