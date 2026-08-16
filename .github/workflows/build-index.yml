@@ -1,0 +1,29 @@
+name: build-index
+
+# 合并到 main 后：扫描 plugins/ → 生成 zips/<name>-<version>.zip + index.json → 自动提交
+# App 端以 https://raw.githubusercontent.com/<owner>/AMBRACE-plugin/main/index.json 为市场数据源
+on:
+  push:
+    branches: [main]
+    paths: ["plugins/**"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 校验 + 打 zip + 生成 index.json
+        run: python scripts/build_index.py plugins zips index.json
+      - name: 提交产物
+        run: |
+          git config user.name "AMBRACE Bot"
+          git config user.email "bot@ambrace.local"
+          git add zips/ index.json
+          git diff --cached --quiet || git commit -m "chore: 更新插件市场索引"
+          git push
