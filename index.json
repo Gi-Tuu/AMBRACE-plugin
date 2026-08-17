@@ -32,8 +32,8 @@
       },
       "usage": "安装后在「扩展」页点击「打开」进入自绘日记页：选择 AI 伙伴或自定义提示词，写下今天的事，AI 帮你写成日记；日记保存在本插件专属存储中（仅自己可见，跨页面会话持久）。",
       "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/ai_diary-1.0.0.zip",
-      "size": 4337,
-      "sha256": "6f6dbf2e0d73be099757d85e16e81b0a9323621ebcf1caf9b8c0461dc108fde0",
+      "size": 4235,
+      "sha256": "d00bdd4dcc32b4dc51e9769e2c7e2cb13ce7002b55568a5417578243fab225aa",
       "min_api_version": "1.0",
       "tags": [],
       "updated_at": ""
@@ -131,8 +131,8 @@
       },
       "usage": "零代码 workflow 插件示例（48c 配置驱动）：在「工作流」页导入模板 daily_summary 即可，无需 main.py。",
       "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/daily_summary_flow-1.0.0.zip",
-      "size": 694,
-      "sha256": "fcf3cb17271960e3b654f59381821752ffc58fe36a1eadff9f5e84f7a0fa3242",
+      "size": 688,
+      "sha256": "45564bbf72fa33a2e6bfc01ecd64244494e280180b8316e4a65dafee54c2dc58",
       "min_api_version": "1.0",
       "tags": [],
       "updated_at": ""
@@ -161,8 +161,8 @@
       },
       "usage": "零代码 prompt 插件示例（48c 配置驱动）：对话中发送「写诗」或「写一首关于春天的诗」即可触发，无需 main.py。",
       "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/poet_skill-1.0.0.zip",
-      "size": 666,
-      "sha256": "5c3461a4b401858826078069020a4ce6d449baf3b795a94187ab3dabacc1ffda",
+      "size": 653,
+      "sha256": "58db44197dd13394c397017c1094367c2252a6efcdd2c212daac3e1a18a46b2f",
       "min_api_version": "1.0",
       "tags": [],
       "updated_at": ""
