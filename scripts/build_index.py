@@ -48,7 +48,11 @@ def main() -> None:
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
             for f in sorted(d.rglob("*")):
                 if f.is_file() and not _ignore(f.relative_to(d).as_posix()):
-                    zf.write(f, f.relative_to(d).as_posix())
+                    rel = f.relative_to(d).as_posix()
+                    zi = zipfile.ZipInfo(rel, date_time=(1980, 1, 1, 0, 0, 0))  # 固定时间戳，CI/本地重建 sha256 稳定
+                    zi.compress_type = zipfile.ZIP_DEFLATED
+                    zi.external_attr = 0o644 << 16
+                    zf.writestr(zi, f.read_bytes())
         sha = hashlib.sha256(zip_path.read_bytes()).hexdigest()
         items.append({
             "name": name,
