@@ -4,11 +4,49 @@
   "updated_at": "",
   "items": [
     {
+      "name": "ai_diary",
+      "version": "1.0.0",
+      "description": "AI 写日记：页面插件示例（hybrid，index.html 自绘 + 桥调用 ai/store）",
+      "author": "AICompanion",
+      "category": "plugin",
+      "type": "hybrid",
+      "icon": "assets/icon.png",
+      "page": "index.html",
+      "hooks": [],
+      "permissions": [],
+      "config": {
+        "chat": {
+          "name": "日记小助手",
+          "persona": "你是一位温柔细心的日记助手，帮助用户记录一天的心情和重要事情，语气自然亲切，像朋友聊天，不要用太书面的话。",
+          "greeting": "今天过得怎么样？想和我聊聊吗？",
+          "description": "AI 写日记页面插件的聊天人设"
+        },
+        "prompt": {
+          "trigger": [
+            "写日记",
+            "日记"
+          ],
+          "systemPrompt": "你是一位温柔细心的日记助手。你的目标：帮用户梳理今天的心情、重要瞬间，用口语化、有温度的语言写一篇日记（100-200 字），结尾可以问用户一句。",
+          "description": "AI 写日记页面插件的自定义提示词"
+        }
+      },
+      "usage": "安装后在「扩展」页点击「打开」进入自绘日记页：选择 AI 伙伴或自定义提示词，写下今天的事，AI 帮你写成日记；日记保存在本插件专属存储中（仅自己可见，跨页面会话持久）。",
+      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/ai_diary-1.0.0.zip",
+      "size": 4337,
+      "sha256": "6f6dbf2e0d73be099757d85e16e81b0a9323621ebcf1caf9b8c0461dc108fde0",
+      "min_api_version": "1.0",
+      "tags": [],
+      "updated_at": ""
+    },
+    {
       "name": "browser_mcp",
       "version": "0.1.0",
       "description": "让 AI 能浏览网页：查看页面标题与摘要、理解图片内容。默认关闭，开启后只记域名和标题，30 分钟自动清除",
       "author": "AICompanion",
       "category": "mcp",
+      "type": "http",
+      "icon": "",
+      "page": "",
       "hooks": [
         "http_router",
         "schedule_tick",
@@ -35,11 +73,109 @@
       "updated_at": ""
     },
     {
+      "name": "daily_summary_flow",
+      "version": "1.0.0",
+      "description": "每日总结工作流模板（零代码 workflow 插件，仅 manifest.json）",
+      "author": "AICompanion",
+      "category": "plugin",
+      "type": "workflow",
+      "icon": "",
+      "page": "",
+      "hooks": [],
+      "permissions": [],
+      "config": {
+        "workflow": {
+          "templates": [
+            {
+              "id": "daily_summary",
+              "name": "每日总结",
+              "description": "每晚 22 点生成当天重要事件与心情总结",
+              "template": {
+                "nodes": [
+                  {
+                    "id": "start",
+                    "type": "trigger",
+                    "config": {
+                      "cron": "0 22 * * *"
+                    }
+                  },
+                  {
+                    "id": "collect",
+                    "type": "action",
+                    "action": "collect_today",
+                    "config": {}
+                  },
+                  {
+                    "id": "summarize",
+                    "type": "llm",
+                    "action": "summarize",
+                    "config": {
+                      "prompt": "总结今天的重要事件与心情，语气温柔"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "start",
+                    "to": "collect"
+                  },
+                  {
+                    "from": "collect",
+                    "to": "summarize"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "usage": "零代码 workflow 插件示例（48c 配置驱动）：在「工作流」页导入模板 daily_summary 即可，无需 main.py。",
+      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/daily_summary_flow-1.0.0.zip",
+      "size": 694,
+      "sha256": "fcf3cb17271960e3b654f59381821752ffc58fe36a1eadff9f5e84f7a0fa3242",
+      "min_api_version": "1.0",
+      "tags": [],
+      "updated_at": ""
+    },
+    {
+      "name": "poet_skill",
+      "version": "1.0.0",
+      "description": "诗人技能：零代码 prompt 插件（仅 manifest.json，无 main.py）",
+      "author": "AICompanion",
+      "category": "plugin",
+      "type": "prompt",
+      "icon": "",
+      "page": "",
+      "hooks": [],
+      "permissions": [],
+      "config": {
+        "prompt": {
+          "trigger": [
+            "写诗",
+            "作诗",
+            "诗一首"
+          ],
+          "systemPrompt": "你是一位现代诗人，擅长用凝练、有意象的语言写诗。用户提到「写诗」时，围绕用户给的话题即兴写一首短诗（8 行以内），并附一句 20 字以内的创作说明。",
+          "description": "根据话题即兴写一首短诗"
+        }
+      },
+      "usage": "零代码 prompt 插件示例（48c 配置驱动）：对话中发送「写诗」或「写一首关于春天的诗」即可触发，无需 main.py。",
+      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/poet_skill-1.0.0.zip",
+      "size": 666,
+      "sha256": "5c3461a4b401858826078069020a4ce6d449baf3b795a94187ab3dabacc1ffda",
+      "min_api_version": "1.0",
+      "tags": [],
+      "updated_at": ""
+    },
+    {
       "name": "weather_brief",
       "version": "1.0.0",
       "description": "让 AI 知道你所在城市的天气：每天感知天气与出行建议，聊天时自然提起",
       "author": "AICompanion",
       "category": "plugin",
+      "type": "http",
+      "icon": "",
+      "page": "",
       "hooks": [
         "context_inject"
       ],
