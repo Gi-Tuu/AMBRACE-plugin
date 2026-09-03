@@ -6,6 +6,13 @@
 > - `plugins/`：插件源码目录（PR 提交入口）
 > - `zips/`：CI 自动生成的安装包（`<name>-<version>.zip`）
 
+## 📚 开发文档
+
+- [插件开发文档（完整版：manifest / 类型 / Hook / SDK / 权限 / 打包 / 调试）](docs/plugin-development.md)
+- [扩展契约（扩展类型 / Hook / 权限 / SDK / 版本化承诺）](docs/extension-contract.md)
+
+> 远程市场安装默认关闭，需管理员在服务端显式开启；插件权限在安装/升级前逐条确认。
+
 ## 目录结构
 
 ```
