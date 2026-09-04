@@ -610,6 +610,9 @@ my_plugin.zip
 3. **远程市场**：`POST /api/v1/marketplace/{name}/install`（从配置的市场 index 安装）
 4. **手动放置**：解压到用户安装目录 `<name>/`，重启或调重新扫描 API
 
+> 插件市场默认拉取官方索引（可离线降级）；自建市场用 `PLUGIN_MARKET_URL` 覆盖；
+> 远程安装需服务端显式开 `PLUGIN_ALLOW_REMOTE_INSTALL=true` 且只装可信来源。
+
 ### 安装后
 
 1. 在扩展页找到插件，开启开关
