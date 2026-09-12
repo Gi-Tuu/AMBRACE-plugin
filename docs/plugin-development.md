@@ -129,6 +129,21 @@ my_plugin/
 - 启用/禁用/配置修改通过 API 或扩展页操作，无需重启
 - 插件异常（加载失败、hook 抛错、超时）**完全隔离**，不影响主链路
 
+### 运行依赖（Python 包）
+
+代码插件用到第三方 Python 包时，**必须在插件目录的 README 里写明安装命令**——内核不会替你装，环境重建后最容易静默丢失。
+
+| 插件 | 依赖 | 安装命令 |
+|------|------|----------|
+| `douyin_mcp` | `playwright` | `backend\.venv\Scripts\python.exe -m pip install playwright` |
+| `browser_mcp` | `playwright` | 同上 |
+
+- 装到**后端虚拟环境** `backend\.venv`——插件与内核同进程运行，装到系统 Python 无效。
+- `douyin_mcp` / `browser_mcp` 走**本机已安装的 Edge**（`channel=msedge`），**不需要**执行 `playwright install`（不下载 Chromium）。
+- 装完**重启服务器**一次，让插件重新初始化浏览器上下文。
+- 自检：`backend\.venv\Scripts\python.exe -c "import playwright; print(playwright.__version__)"`。
+- 教训（2026-09-12）：目录改名重建 venv 时漏装 `playwright`，抖音插件启动即报 `No module named playwright`（Edge 预热失败、退化到冷启动兜底），只有日志里能看到。
+
 ---
 
 ## 三、manifest.json 完整参考
