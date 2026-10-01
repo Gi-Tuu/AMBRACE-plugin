@@ -168,116 +168,6 @@
       "updated_at": ""
     },
     {
-      "name": "weather_brief",
-      "version": "1.0.0",
-      "description": "让 AI 知道你所在城市的天气：每天感知天气与出行建议，聊天时自然提起",
-      "author": "AICompanion",
-      "category": "plugin",
-      "type": "http",
-      "icon": "",
-      "page": "",
-      "hooks": [
-        "context_inject"
-      ],
-      "permissions": [
-        "http_request"
-      ],
-      "config": {
-        "prefix": "【插件-天气简报】"
-      },
-      "usage": "打开本插件开关即可；AI 会自动感知你所在城市的天气（依赖手机感知的位置/天气数据）。",
-      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/weather_brief-1.0.0.zip",
-      "size": 1011,
-      "sha256": "758e9471c9d6a563acd03d2b59c414bc79e36a2661eec46528e6cb2eef0463c9",
-      "min_api_version": "1.0",
-      "tags": [],
-      "updated_at": ""
-    },
-    {
-      "name": "douyin_mcp",
-      "version": "0.1.0",
-      "description": "让 AI 拥有自己的抖音账号：发布图文、回复粉丝评论、感知账号动态，还能看懂自己发过的图文（发布/回复默认需你确认）",
-      "author": "AICompanion",
-      "category": "mcp",
-      "type": "http",
-      "icon": "",
-      "page": "",
-      "hooks": [
-        "schedule_tick",
-        "context_inject",
-        "http_router",
-        "proactive_candidate"
-      ],
-      "permissions": [
-        "douyin_publish"
-      ],
-      "config": {
-        "comment_poll_minutes": 30,
-        "inject_minutes": 120,
-        "max_comment_inject": 3,
-        "max_post_inject": 2,
-        "allowed_character_ids": "",
-        "max_comment_posts": 5,
-        "require_approval": true,
-        "default_character_id": "",
-        "custom_prompt": ""
-      },
-      "usage": "1. 打开本插件开关；\n2. 点下方「绑定」，在弹出的窗口里扫码登录抖音；\n3. AI 的图文/回复草稿会出现在「AI 好友」页右上角小信封里，你确认后才会执行；\n4. 想调整 AI 创作风格，可在本页「自定义设定」里写要求。",
-      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/douyin_mcp-0.1.0.zip",
-      "size": 56143,
-      "sha256": "69b4d400ec5197f6c936dacba649c7b1ab665f46f9c09439b27768a2fdf15bc4",
-      "min_api_version": "1.0",
-      "tags": [],
-      "updated_at": ""
-    },
-    {
-      "name": "festival_extra",
-      "version": "1.0.0",
-      "description": "节日内容包示例（content_pack）：补充固定日期节日，经 get_holidays 合并生效",
-      "author": "AMBRACE",
-      "category": "plugin",
-      "type": "content",
-      "icon": "",
-      "page": "",
-      "hooks": [],
-      "permissions": [],
-      "config": {},
-      "usage": "启用后在对应日期的节日祝福/主动消息中生效。",
-      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/festival_extra-1.0.0.zip",
-      "size": 542,
-      "sha256": "03e87605506c22972850306f5f50c59974ae99f0482f5b4b5417a0a908cdd825",
-      "min_api_version": "1.0",
-      "tags": [],
-      "updated_at": ""
-    },
-    {
-      "name": "good_night_topic",
-      "version": "1.0.0",
-      "description": "晚间晚安话题：每晚 22:00-23:00 角色主动向用户道晚安（示例：proactive_candidate + action + send_message）",
-      "author": "AICompanion",
-      "category": "plugin",
-      "type": "http",
-      "icon": "",
-      "page": "",
-      "hooks": [
-        "proactive_candidate"
-      ],
-      "permissions": [
-        "send_message"
-      ],
-      "config": {
-        "enabled_hours": "22-23",
-        "daily_limit": 1
-      },
-      "usage": "开启后每晚 22-23 点，角色会主动给用户发送一条晚安消息（每角色每日 1 条）。可改 enabled_hours 调整时段，如 21-23。",
-      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/good_night_topic-1.0.0.zip",
-      "size": 2130,
-      "sha256": "3be9b7250aa6db8be5f7404e0c7a64eec68b920f873e1382b0b27225093803ca",
-      "min_api_version": "1.0",
-      "tags": [],
-      "updated_at": ""
-    },
-    {
       "name": "recipe_companion",
       "version": "1.0.0",
       "description": "离线菜谱库：聊到做饭、吃什么、点菜或夜宵时，结合餐段、场景与你和角色的口味、忌口，自然给出多样菜品推荐与简化做法；纯离线、不联网、零权限。",
@@ -300,8 +190,34 @@
       },
       "usage": "打开开关后，私聊中聊到「吃什么/怎么做/点外卖/夜宵」等吃饭话题时会自动获得离线菜品建议：吃什么给多道精简卡，问做法给少量带简化步骤的菜。当句提到花生过敏、不吃辣、吃素、清真等会即时硬过滤；结果在不同菜系间轮换并做近期去重。可在配置里调整推荐数量、注入字数、探索名额与快手时长上限。",
       "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/recipe_companion-1.0.0.zip",
-      "size": 91118,
-      "sha256": "014fe8dccfff9bd23fce619a04eeecf0cd5390557e1c0d3648662681f1c7f883",
+      "size": 90018,
+      "sha256": "79698bd9b327f0d198441898ba926f33ee24f9cfaa20d6fc8c28779e89c80c59",
+      "min_api_version": "1.0",
+      "tags": [],
+      "updated_at": ""
+    },
+    {
+      "name": "weather_brief",
+      "version": "1.0.0",
+      "description": "让 AI 知道你所在城市的天气：每天感知天气与出行建议，聊天时自然提起",
+      "author": "AICompanion",
+      "category": "plugin",
+      "type": "http",
+      "icon": "",
+      "page": "",
+      "hooks": [
+        "context_inject"
+      ],
+      "permissions": [
+        "http_request"
+      ],
+      "config": {
+        "prefix": "【插件-天气简报】"
+      },
+      "usage": "打开本插件开关即可；AI 会自动感知你所在城市的天气（依赖手机感知的位置/天气数据）。",
+      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/weather_brief-1.0.0.zip",
+      "size": 1011,
+      "sha256": "758e9471c9d6a563acd03d2b59c414bc79e36a2661eec46528e6cb2eef0463c9",
       "min_api_version": "1.0",
       "tags": [],
       "updated_at": ""
