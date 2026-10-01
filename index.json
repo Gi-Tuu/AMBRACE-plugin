@@ -276,6 +276,35 @@
       "min_api_version": "1.0",
       "tags": [],
       "updated_at": ""
+    },
+    {
+      "name": "recipe_companion",
+      "version": "1.0.0",
+      "description": "离线菜谱库：聊到做饭、吃什么、点菜或夜宵时，结合餐段、场景与你和角色的口味、忌口，自然给出多样菜品推荐与简化做法；纯离线、不联网、零权限。",
+      "author": "AMBRACE",
+      "category": "plugin",
+      "type": "http",
+      "icon": "🍳",
+      "page": "",
+      "hooks": [
+        "context_inject"
+      ],
+      "permissions": [],
+      "config": {
+        "enabled": true,
+        "suggest_top_n": 7,
+        "recipe_top_n": 3,
+        "explore_quota": 2,
+        "inject_max_chars": 800,
+        "quick_max_minutes": 20
+      },
+      "usage": "打开开关后，私聊中聊到「吃什么/怎么做/点外卖/夜宵」等吃饭话题时会自动获得离线菜品建议：吃什么给多道精简卡，问做法给少量带简化步骤的菜。当句提到花生过敏、不吃辣、吃素、清真等会即时硬过滤；结果在不同菜系间轮换并做近期去重。可在配置里调整推荐数量、注入字数、探索名额与快手时长上限。",
+      "download_url": "https://raw.githubusercontent.com/Gi-Tuu/AMBRACE-plugin/main/zips/recipe_companion-1.0.0.zip",
+      "size": 91118,
+      "sha256": "014fe8dccfff9bd23fce619a04eeecf0cd5390557e1c0d3648662681f1c7f883",
+      "min_api_version": "1.0",
+      "tags": [],
+      "updated_at": ""
     }
   ]
 }

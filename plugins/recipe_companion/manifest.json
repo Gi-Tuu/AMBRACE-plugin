@@ -1,0 +1,22 @@
+{
+  "name": "recipe_companion",
+  "display_name": "食谱伴侣",
+  "version": "1.0.0",
+  "description": "离线菜谱库：聊到做饭、吃什么、点菜或夜宵时，结合餐段、场景与你和角色的口味、忌口，自然给出多样菜品推荐与简化做法；纯离线、不联网、零权限。",
+  "author": "AMBRACE",
+  "category": "plugin",
+  "type": "http",
+  "hooks": ["context_inject"],
+  "permissions": [],
+  "icon": "🍳",
+  "min_api_version": "1.0",
+  "usage": "打开开关后，私聊中聊到「吃什么/怎么做/点外卖/夜宵」等吃饭话题时会自动获得离线菜品建议：吃什么给多道精简卡，问做法给少量带简化步骤的菜。当句提到花生过敏、不吃辣、吃素、清真等会即时硬过滤；结果在不同菜系间轮换并做近期去重。可在配置里调整推荐数量、注入字数、探索名额与快手时长上限。",
+  "config": {
+    "enabled": true,
+    "suggest_top_n": 7,
+    "recipe_top_n": 3,
+    "explore_quota": 2,
+    "inject_max_chars": 800,
+    "quick_max_minutes": 20
+  }
+}
